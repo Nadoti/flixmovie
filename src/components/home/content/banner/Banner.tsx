@@ -16,6 +16,7 @@ export function Banner() {
       .then(json => {
         const takeThree = json.results.slice(0, 3)
         setListImgBanner(takeThree)
+        setSelectedImgBanner(takeThree[0])
         console.log(takeThree)
       })
   }
@@ -24,21 +25,22 @@ export function Banner() {
 
     takeMoviePolular()
   }, [])
-
+  console.log(selectedImgBanner)
+  //backdrop_path
   return (
-    <section >
-      <div>
-        {listImgBanner?.map(item => (
-          <img key={item.id} src={`${url_img}${item.backdrop_path}`} alt="" />
-        ))}
-      </div>
-
-      <div>
+    <section className='w-[58rem] h-[20rem] mt-8 mb-0 mx-auto' >
+      <div style={{ backgroundImage: `url(${url_img}${selectedImgBanner?.backdrop_path}` }} className="w-full h-full bg-no-repeat bg-center bg-cover rounded-3xl">
         <div>
-
+          a
         </div>
 
-        <div></div>
+        <div>
+          <div>
+
+          </div>
+
+          <div></div>
+        </div>
       </div>
     </section>
   )
