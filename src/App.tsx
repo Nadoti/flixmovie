@@ -1,18 +1,20 @@
+import { AnimatePresence } from "framer-motion";
+import { BrowserRouter } from "react-router-dom";
 import { AsideNavigation } from "./components/home/aside/AsideNavigation";
 import { ContentMain } from "./components/home/content/ContentMain";
+import { Navbar } from "./components/Navbar";
+import { Router } from "./Router";
 
 
 export function App() {
 
 
-
   return (
-    <main className="grid grid-cols-footer bg-primary h-screen">
-      <AsideNavigation />
-      <ContentMain />
-      <aside className="bg-primary-100">
-        teste
-      </aside>
-    </main>
+    <AnimatePresence initial={false}>
+      <BrowserRouter>
+        <Navbar />
+        <Router />
+      </BrowserRouter>
+    </AnimatePresence>
   )
 }
